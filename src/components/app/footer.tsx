@@ -1,4 +1,5 @@
 import { JollyRogerIcon } from '../icons/jolly-roger';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
           <JollyRogerIcon className="h-10 w-10 text-primary" />
         </div>
         <p className="mb-2">
-          <a href="#" className="hover:text-primary transition-colors">Back to Top</a>
+          <Link href="/" className="hover:text-primary transition-colors">Back to Top</Link>
         </p>
         <p className="text-sm">
           &copy; {new Date().getFullYear()} Straw Hat Navigator. All rights reserved for the future Pirate King.

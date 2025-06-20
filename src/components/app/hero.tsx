@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -14,12 +15,12 @@ export default function Hero() {
             <p className="mt-4 text-xl md:text-2xl text-foreground/80 max-w-lg">
               The Journey of the Man Who Will Become the King of the Pirates!
             </p>
-            <a href="#biography" className="mt-8">
+            <Link href="/biography" className="mt-8">
               <Button size="lg" className="text-lg">
                 Start the Adventure
                 <ArrowDown className="ml-2 h-5 w-5" />
               </Button>
-            </a>
+            </Link>
           </div>
           <div className="relative h-64 md:h-full w-full">
             <Image
