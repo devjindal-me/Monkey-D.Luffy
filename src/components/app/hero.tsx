@@ -22,16 +22,24 @@ export default function Hero() {
               </Button>
             </Link>
           </div>
-          <div className="relative h-64 md:h-full w-full">
+          <div className="relative h-full w-full flex items-center justify-center">
             <Image
-              src="https://placehold.co/800x800.png"
+              src="https://placehold.co/600x800.png"
               alt="Hero image of Monkey D. Luffy"
-              layout="fill"
-              objectFit="contain"
-              objectPosition="center"
+              width={500}
+              height={700}
               priority
               data-ai-hint="luffy smiling"
-              className="opacity-90 md:opacity-100"
+              className="rounded-lg shadow-2xl max-h-[70vh] w-auto object-contain hidden md:block"
+            />
+             <Image
+              src="https://placehold.co/400x400.png"
+              alt="Hero image of Monkey D. Luffy"
+              width={300}
+              height={300}
+              priority
+              data-ai-hint="luffy smiling"
+              className="rounded-full shadow-2xl object-cover w-64 h-64 md:hidden"
             />
           </div>
         </div>

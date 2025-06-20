@@ -1,30 +1,30 @@
 import Image from 'next/image';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 
 const forms = [
   {
     name: 'Gear Second',
     description: 'Luffy pumps blood faster through his body, dramatically increasing his speed and power. His skin turns pink and emits steam.',
-    image: 'https://placehold.co/1200x600.png',
+    image: 'https://placehold.co/800x600.png',
     hint: 'luffy gear second',
   },
   {
     name: 'Gear Third',
     description: 'By blowing air into his bones, Luffy can inflate his limbs to gigantic proportions, granting him immense destructive power at the cost of speed.',
-    image: 'https://placehold.co/1200x600.png',
+    image: 'https://placehold.co/800x600.png',
     hint: 'luffy gear third',
   },
   {
     name: 'Gear Fourth',
     description: 'Luffy inflates his muscles and coats his body in Armament Haki. This form has several variations, like the powerful Bounceman and the swift Snakeman.',
-    image: 'https://placehold.co/1200x600.png',
+    image: 'https://placehold.co/800x600.png',
     hint: 'luffy gear fourth',
   },
   {
     name: 'Gear Fifth',
     description: "The awakened form of his Devil Fruit, revealing its true name: the Human-Human Fruit, Model: Nika. It grants him a rubbery body with limitless freedom, embodying the 'Warrior of Liberation'.",
-    image: 'https://placehold.co/1200x600.png',
+    image: 'https://placehold.co/800x600.png',
     hint: 'luffy gear fifth',
   },
 ];
@@ -49,23 +49,26 @@ export default function Forms() {
           </TabsList>
           {forms.map((form) => (
             <TabsContent key={form.name} value={form.name}>
-              <Card className="overflow-hidden shadow-lg border-none">
-                <CardHeader className="p-0 relative">
-                  <Image
-                    src={form.image}
-                    alt={form.name}
-                    width={1200}
-                    height={600}
-                    className="object-cover w-full h-[300px] md:h-[400px]"
-                    data-ai-hint={form.hint}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                </CardHeader>
-                <CardContent className="relative -mt-24 z-10 p-6 md:p-8">
-                  <CardTitle className="text-4xl md:text-5xl font-headline text-primary drop-shadow-lg">{form.name}</CardTitle>
-                  <CardDescription className="text-lg mt-4 max-w-2xl text-card-foreground bg-card/80 backdrop-blur-sm p-4 rounded-lg shadow-lg">
-                    {form.description}
-                  </CardDescription>
+              <Card className="shadow-lg border-primary/20 bg-card/80 backdrop-blur-sm">
+                <CardContent className="p-6 md:p-8">
+                  <div className="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                      <Image
+                        src={form.image}
+                        alt={form.name}
+                        width={800}
+                        height={600}
+                        className="object-cover w-full rounded-lg shadow-lg"
+                        data-ai-hint={form.hint}
+                      />
+                    </div>
+                    <div className="space-y-4">
+                      <h3 className="text-4xl md:text-5xl font-headline text-primary">{form.name}</h3>
+                      <p className="text-lg text-muted-foreground">
+                        {form.description}
+                      </p>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             </TabsContent>

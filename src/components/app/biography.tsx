@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { DevilFruitIcon } from '../icons/devil-fruit';
 import { StrawHatIcon } from '../icons/straw-hat';
 
@@ -13,24 +13,22 @@ export default function Biography() {
             Meet Monkey D. Luffy, the rubbery captain of the Straw Hat Pirates with a heart of gold and a stomach that's a bottomless pit.
           </p>
         </div>
-        <Card className="overflow-hidden shadow-lg border-primary/20 bg-card/80 backdrop-blur-sm">
-          <div className="md:flex">
-            <div className="md:w-1/3">
-              <Image
-                src="https://placehold.co/600x800.png"
-                alt="Monkey D. Luffy"
-                width={600}
-                height={800}
-                className="object-cover h-full w-full"
-                data-ai-hint="luffy serious"
-              />
-            </div>
-            <div className="md:w-2/3">
-              <CardHeader>
-                <CardTitle className="text-4xl md:text-5xl font-headline text-primary">Monkey D. Luffy</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6 text-lg text-foreground/90">
-                <p>
+        <Card className="shadow-lg border-primary/20 bg-card/80 backdrop-blur-sm">
+          <CardContent className="p-6 md:p-8">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <Image
+                  src="https://placehold.co/600x600.png"
+                  alt="Monkey D. Luffy"
+                  width={600}
+                  height={600}
+                  className="object-cover rounded-lg shadow-lg w-full aspect-square"
+                  data-ai-hint="luffy serious"
+                />
+              </div>
+              <div className="space-y-6 text-foreground/90">
+                <h3 className="text-4xl md:text-5xl font-headline text-primary">Monkey D. Luffy</h3>
+                <p className="text-lg">
                   From the peaceful shores of Foosha Village, a young boy with a boundless spirit and a contagious grin set out to sea. Inspired by his hero, the great pirate "Red-Haired" Shanks, Luffy dreams of finding the legendary treasure, the One Piece, and claiming the title of Pirate King.
                 </p>
                 <div className="flex items-start space-x-4">
@@ -55,9 +53,9 @@ export default function Biography() {
                     </p>
                   </div>
                 </div>
-              </CardContent>
+              </div>
             </div>
-          </div>
+          </CardContent>
         </Card>
       </div>
     </section>
