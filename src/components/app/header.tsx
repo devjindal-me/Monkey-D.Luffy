@@ -1,7 +1,6 @@
 'use client'
 
 import { SidebarTrigger } from '@/components/ui/sidebar';
-import { Button } from '@/components/ui/button';
 
 export default function Header() {
   return (
@@ -10,9 +9,6 @@ export default function Header() {
         <div className="flex items-center gap-2">
             <SidebarTrigger />
         </div>
-        <a href="https://onepiece.fandom.com/wiki/Monkey_D._Luffy" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">Read More</Button>
-        </a>
       </div>
     </header>
   );
