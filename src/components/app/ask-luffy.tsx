@@ -15,9 +15,9 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Loader2, User, Bot } from 'lucide-react';
-import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Loader2, User } from 'lucide-react';
+import { Avatar, AvatarFallback } from '../ui/avatar';
 import { JollyRogerIcon } from '../icons/jolly-roger';
 
 const formSchema = z.object({
@@ -51,19 +51,19 @@ export default function AskLuffy() {
   }
 
   return (
-    <section id="ask-luffy" className="py-16 md:py-24 bg-secondary/50">
+    <section id="ask-luffy" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary-foreground bg-primary inline-block px-4 py-2 rounded-lg">Ask Captain Luffy!</h2>
+          <h2 className="text-5xl md:text-6xl font-bold font-headline text-primary">Ask Captain Luffy!</h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
             Got a question for the future King of the Pirates? Ask away! I'll answer anything... as long as it's not about where I hid my meat.
           </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <Card className="shadow-lg">
+          <Card className="shadow-lg bg-card/80 border-primary/20">
             <CardHeader>
-              <CardTitle className="font-headline">Your Question</CardTitle>
+              <CardTitle className="font-headline text-2xl text-primary/90">Your Question</CardTitle>
             </CardHeader>
             <CardContent>
               <Form {...form}>
@@ -77,7 +77,7 @@ export default function AskLuffy() {
                         <FormControl>
                           <Textarea
                             placeholder="e.g. What's your favorite food?"
-                            className="resize-none"
+                            className="resize-none bg-background/50"
                             {...field}
                           />
                         </FormControl>
@@ -85,7 +85,7 @@ export default function AskLuffy() {
                       </FormItem>
                     )}
                   />
-                  <Button type="submit" disabled={isLoading} className="w-full">
+                  <Button type="submit" disabled={isLoading} className="w-full text-lg">
                     {isLoading ? (
                       <>
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -104,9 +104,9 @@ export default function AskLuffy() {
             <div className="mt-8 space-y-6">
                <div className="flex items-start gap-4">
                   <Avatar>
-                    <AvatarFallback><User /></AvatarFallback>
+                    <AvatarFallback className="bg-secondary"><User /></AvatarFallback>
                   </Avatar>
-                  <div className="bg-card p-4 rounded-lg rounded-tl-none flex-1">
+                  <div className="bg-card/90 p-4 rounded-lg rounded-tl-none flex-1 border border-border">
                       <p className="font-bold">You</p>
                       <p className="text-muted-foreground">{question}</p>
                   </div>
@@ -115,13 +115,13 @@ export default function AskLuffy() {
               {isLoading && (
                  <div className="flex items-start gap-4">
                   <Avatar>
-                    <AvatarFallback>
-                      <JollyRogerIcon className="h-6 w-6" />
+                    <AvatarFallback className="bg-primary/20 border border-primary/30">
+                      <JollyRogerIcon className="h-6 w-6 text-primary" />
                     </AvatarFallback>
                   </Avatar>
-                  <div className="bg-primary/10 p-4 rounded-lg rounded-tl-none flex-1 flex items-center gap-2">
+                  <div className="bg-primary/20 border border-primary/30 p-4 rounded-lg rounded-tl-none flex-1 flex items-center gap-2">
                      <Loader2 className="h-4 w-4 animate-spin text-primary" />
-                     <p className="text-primary italic">Luffy is thinking...</p>
+                     <p className="text-primary/90 italic">Luffy is thinking...</p>
                   </div>
                 </div>
               )}
@@ -129,13 +129,13 @@ export default function AskLuffy() {
               {answer && (
                  <div className="flex items-start gap-4">
                    <Avatar>
-                    <AvatarFallback>
-                      <JollyRogerIcon className="h-6 w-6" />
+                    <AvatarFallback className="bg-primary/20 border border-primary/30">
+                      <JollyRogerIcon className="h-6 w-6 text-primary" />
                     </AvatarFallback>
                   </Avatar>
-                  <div className="bg-primary/10 p-4 rounded-lg rounded-tl-none flex-1">
-                      <p className="font-bold text-primary font-headline">Monkey D. Luffy</p>
-                      <p className="text-primary-foreground/90 whitespace-pre-wrap">{answer.answer}</p>
+                  <div className="bg-primary/20 border border-primary/30 p-4 rounded-lg rounded-tl-none flex-1">
+                      <p className="font-bold text-primary font-headline text-xl">Monkey D. Luffy</p>
+                      <p className="text-foreground/90 whitespace-pre-wrap">{answer.answer}</p>
                   </div>
                 </div>
               )}

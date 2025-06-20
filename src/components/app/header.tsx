@@ -15,17 +15,17 @@ export default function Header() {
       <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-4">
         <a href="#hero" className="flex items-center space-x-2">
           <JollyRogerIcon className="h-8 w-8 text-primary" />
-          <span className="font-bold text-xl font-headline">Straw Hat Navigator</span>
+          <span className="font-bold text-2xl font-headline text-primary tracking-wider">Straw Hat Navigator</span>
         </a>
         <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="hover:text-primary transition-colors">
+            <a key={link.name} href={link.href} className="hover:text-primary transition-colors text-lg">
               {link.name}
             </a>
           ))}
         </nav>
         <a href="https://onepiece.fandom.com/wiki/Monkey_D._Luffy" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="hidden md:inline-flex">Read More</Button>
+            <Button variant="outline" className="hidden md:inline-flex border-primary text-primary hover:bg-primary hover:text-primary-foreground">Read More</Button>
         </a>
       </div>
     </header>

@@ -31,25 +31,25 @@ const forms = [
 
 export default function Forms() {
   return (
-    <section id="forms" className="py-16 md:py-24 bg-background">
+    <section id="forms" className="py-16 md:py-24 bg-secondary/20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">The Gears of a King</h2>
+          <h2 className="text-5xl md:text-6xl font-bold font-headline text-primary">The Gears of a King</h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
             To protect his friends and achieve his dream, Luffy has pushed his rubbery body to its limits, unlocking incredible transformations.
           </p>
         </div>
         <Tabs defaultValue="Gear Second" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 bg-accent/20">
+          <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 bg-primary/10 h-auto">
             {forms.map((form) => (
-              <TabsTrigger key={form.name} value={form.name} className="font-headline data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+              <TabsTrigger key={form.name} value={form.name} className="font-headline text-lg data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 {form.name}
               </TabsTrigger>
             ))}
           </TabsList>
           {forms.map((form) => (
             <TabsContent key={form.name} value={form.name}>
-              <Card className="overflow-hidden shadow-lg">
+              <Card className="overflow-hidden shadow-lg border-none">
                 <CardHeader className="p-0 relative">
                   <Image
                     src={form.image}
@@ -61,9 +61,9 @@ export default function Forms() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                 </CardHeader>
-                <CardContent className="relative -mt-16 z-10 p-6 md:p-8 text-white">
-                  <CardTitle className="text-2xl md:text-3xl font-headline text-primary-foreground bg-primary inline-block px-3 py-1 rounded-md">{form.name}</CardTitle>
-                  <CardDescription className="text-lg mt-4 max-w-2xl text-card-foreground/90 bg-card/90 p-4 rounded-lg">
+                <CardContent className="relative -mt-24 z-10 p-6 md:p-8">
+                  <CardTitle className="text-4xl md:text-5xl font-headline text-primary drop-shadow-lg">{form.name}</CardTitle>
+                  <CardDescription className="text-lg mt-4 max-w-2xl text-card-foreground bg-card/80 backdrop-blur-sm p-4 rounded-lg shadow-lg">
                     {form.description}
                   </CardDescription>
                 </CardContent>

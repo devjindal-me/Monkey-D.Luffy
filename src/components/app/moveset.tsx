@@ -30,19 +30,19 @@ const moves = [
 
 export default function Moveset() {
   return (
-    <section id="moveset" className="py-16 md:py-24 bg-secondary/50">
+    <section id="moveset" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Signature Moves</h2>
+          <h2 className="text-5xl md:text-6xl font-bold font-headline text-primary">Signature Moves</h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
             With a body made of rubber, Luffy's fighting style is as unpredictable as it is powerful. Here are some of his iconic techniques.
           </p>
         </div>
         <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion type="single" collapsible className="w-full border-t border-primary/20">
             {moves.map((move, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-lg font-headline hover:no-underline text-left">
+              <AccordionItem key={index} value={`item-${index}`} className="border-b border-primary/20">
+                <AccordionTrigger className="text-2xl font-headline hover:no-underline text-left text-primary/90 hover:text-primary">
                   {move.name}
                 </AccordionTrigger>
                 <AccordionContent className="text-base text-muted-foreground">
